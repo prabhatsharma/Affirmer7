@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Affirmer7.iml" filepath="$PROJECT_DIR$/Affirmer7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Affirmer7/Affirmer7-Affirmer7.iml" filepath="$PROJECT_DIR$/Affirmer7/Affirmer7-Affirmer7.iml" />
+    </modules>
+  </component>
+</project>
+
