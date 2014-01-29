@@ -63,11 +63,18 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 {
                     case 0:
                         FragmentAffirmations f0=null;
+                        FragmentRecorder f1=null;
                         f0=(FragmentAffirmations)getSupportFragmentManager().findFragmentByTag("android:switcher:"+R.id.pager + ":0");
                         if(f0!=null && f0.getView()!=null )
                         {
                             f0.reset();
-                            Log.e("MainActivity-F0","F0 has been reset");
+                            //Log.e("MainActivity-F0","F0 has been reset");
+                        }
+                        f1=(FragmentRecorder)getSupportFragmentManager().findFragmentByTag("android:switcher:"+R.id.pager + ":1");
+                        if(f0!=null && f0.getView()!=null )
+                        {
+                            f1.reset();
+                            //Log.e("MainActivity-F1","F1 has been reset");
                         }
                         break;
                 }
@@ -82,32 +89,6 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                             .setTabListener(this));
         }
     }
-
-
-
-/*    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }*/
-
-/*
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        */
-/*if (id == R.id.action_settings) {
-            return true;
-        }*//*
-
-        return super.onOptionsItemSelected(item);
-    }
-*/
 
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {

@@ -52,13 +52,13 @@ public class FragmentRecorder extends Fragment implements View.OnClickListener
         return(view);
     }
 
-    @Override
-    public void onPause()
+    public void reset()
     {
-        super.onPause();
+        //Log.e("FragmentRecorder.reset()","reset() started");
         if(mRecorder!=null)
         {
             mRecorder.stop();
+            mRecorder.reset();
             mRecorder.release();
             mRecorder=null;
         }
@@ -72,8 +72,14 @@ public class FragmentRecorder extends Fragment implements View.OnClickListener
         btnStartStopPlaying.setText("Start Playing");
         btnStartStopRecording.setEnabled(true);
         btnStartStopRecording.setText("Start Recording");
+    }
 
-        Log.e("FragmentRecorder.onPause()" , "RecorderFragment paused");
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        reset();
+        //Log.e("FragmentRecorder.onPause()" , "RecorderFragment paused");
     }
 
 
@@ -121,6 +127,7 @@ public class FragmentRecorder extends Fragment implements View.OnClickListener
             mRecorder.stop();
             mRecorder.reset();
             mRecorder.release();
+            mRecorder=null;
             //Log.e("stopRecording()","Last file");
         }
     }
@@ -164,9 +171,13 @@ public class FragmentRecorder extends Fragment implements View.OnClickListener
 
     public void stopPlaying()
     {
-        mPlayer.stop();
-        mPlayer.release();
-        //Log.e("stopPlaying()","stopped playing");
+        if(mPlayer!=null)
+        {
+            mPlayer.stop();
+            mPlayer.reset();
+            mPlayer.release();
+            mPlayer=null;
+        }
     }
 
     private String getFilename() {

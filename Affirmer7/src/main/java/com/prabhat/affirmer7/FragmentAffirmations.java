@@ -73,6 +73,9 @@ public class FragmentAffirmations extends Fragment
 
     public void reset()
     {
+        Log.e("reset()","Inside reset()");
+        FilesInFolder.clear();
+        FilesInFolder = GetFiles(path);
         ad.clear();
         affirmation_data.clear();
 

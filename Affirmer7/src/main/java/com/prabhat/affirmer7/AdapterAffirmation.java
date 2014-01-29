@@ -237,12 +237,12 @@ public class AdapterAffirmation extends ArrayAdapter <Affirmation>
         alert.setMessage("Sure, you want to delete: " + theFile + "?");
         alert.setTitle("Deleting..");
 
-        alert.setNegativeButton("Nope", new DialogInterface.OnClickListener() {
+        alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 dialog.cancel();
             }});
 
-        alert.setPositiveButton("Oh Yeah!!", new DialogInterface.OnClickListener() {
+        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 if(file.delete())
                 {
